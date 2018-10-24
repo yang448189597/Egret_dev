@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+html, body {
+	-ms-touch-action: none;
+	background: #ffffff;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	height: 100%;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.lds-spinner {
+  position: relative;
+}
+.lds-spinner div {
+  left: 94px;
+  top: 48px;
+  position: absolute;
+  -webkit-animation: lds-spinner linear 1.7s infinite;
+  animation: lds-spinner linear 1.7s infinite;
+  background: #11e1ec;
+  width: 12px;
+  height: 24px;
+  border-radius: 40%;
+  -webkit-transform-origin: 6px 52px;
+  transform-origin: 6px 52px;
+}
+.lds-spinner div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-animation-delay: -1.53s;
+  animation-delay: -1.53s;
+}
+.lds-spinner div:nth-child(2) {
+  -webkit-transform: rotate(36deg);
+  transform: rotate(36deg);
+  -webkit-animation-delay: -1.36s;
+  animation-delay: -1.36s;
+}
+.lds-spinner div:nth-child(3) {
+  -webkit-transform: rotate(72deg);
+  transform: rotate(72deg);
+  -webkit-animation-delay: -1.19s;
+  animation-delay: -1.19s;
+}
+.lds-spinner div:nth-child(4) {
+  -webkit-transform: rotate(108deg);
+  transform: rotate(108deg);
+  -webkit-animation-delay: -1.02s;
+  animation-delay: -1.02s;
+}
+.lds-spinner div:nth-child(5) {
+  -webkit-transform: rotate(144deg);
+  transform: rotate(144deg);
+  -webkit-animation-delay: -0.85s;
+  animation-delay: -0.85s;
+}
+.lds-spinner div:nth-child(6) {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-animation-delay: -0.68s;
+  animation-delay: -0.68s;
+}
+.lds-spinner div:nth-child(7) {
+  -webkit-transform: rotate(216deg);
+  transform: rotate(216deg);
+  -webkit-animation-delay: -0.51s;
+  animation-delay: -0.51s;
+}
+.lds-spinner div:nth-child(8) {
+  -webkit-transform: rotate(252deg);
+  transform: rotate(252deg);
+  -webkit-animation-delay: -0.34s;
+  animation-delay: -0.34s;
+}
+.lds-spinner div:nth-child(9) {
+  -webkit-transform: rotate(288deg);
+  transform: rotate(288deg);
+  -webkit-animation-delay: -0.17s;
+  animation-delay: -0.17s;
+}
+.lds-spinner div:nth-child(10) {
+  -webkit-transform: rotate(324deg);
+  transform: rotate(324deg);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.lds-spinner {
+  width: 51px !important;
+  height: 51px !important;
+  -webkit-transform: translate(-25.5px, -25.5px) scale(0.255) translate(25.5px, 25.5px);
+  transform: translate(-25.5px, -25.5px) scale(0.255) translate(25.5px, 25.5px);
+}
+    </style>
+</head>
+
+<body>
+    <div id = "loading" class="lds-css ng-scope" style = "position:absolute;top:50%;left:50%;margin-left:-26px;margin-top:-26px;">
+        <div class="lds-spinner" style="100%;height:100%">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id = "game-scene" style="left: -999999px;margin: auto;width: 100%;height: 100%;background-color:#ffffff" class="egret-player" 
+        data-entry-class="Main" data-orientation="auto" data-scale-mode="showAll" data-frame-rate="30" data-content-width="650"
+        data-content-height="650" data-multi-fingered="2" data-show-fps="false" data-show-log="false" 
+        data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+<script>
+    var switchGameScenme = function(){
+        document.getElementById("game-scene").style.left = "0"
+        document.getElementById("loading").style.display = "none"
+    }
+    var parseUrl = function () {
+        var query = window.location.search.substring(1)
+        if (!query) {
+            return false
+        }
+        var parseRes = {}
+        var vars = query.split("&")
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=")
+            if (pair.length == 2) {
+                parseRes[pair[0].trim()] = pair[1].trim()
+            }
+        }
+        return parseRes
+    }
+    var urlParam = parseUrl();
+    var width = 650;
+    var height = width * (urlParam.lh / urlParam.lw);
+    var player = document.querySelector(".egret-player");
+    player.dataset.contentWidth = width;
+    player.dataset.contentHeight = height;
+
+    var player = document.querySelector(".egret-player");
+    player.dataset.contentWidth = document.body.offsetWidth;
+    player.dataset.contentHeight = document.body.offsetHeight;
+
+    console.log('parseUrl--' + new Date());
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                console.log('loading--' + new Date());
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        console.log('loading-src--' + src + '--' + new Date());
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+             **/
+            console.log('loadScript--' + new Date());
+            egret.runEgret({
+                renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+                    var backingStore = context.backingStorePixelRatio ||
+                        context.webkitBackingStorePixelRatio ||
+                        context.mozBackingStorePixelRatio ||
+                        context.msBackingStorePixelRatio ||
+                        context.oBackingStorePixelRatio ||
+                        context.backingStorePixelRatio || 1;
+                    return (window.devicePixelRatio || 1) / backingStore;
+                }
+            });
+        });
+    });
+    xhr.send(null);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,gameEui_json,bg_png,item_1_png,item_2_png,item_4_png,item_3_png,item_5_png,item_6_png,item_7_png,item_8_png,item_9_png,item_10_png,item_11_png,item_13_png,item_12_png,item_14_png,pressed_start_png,normal_start_png,game_back_normal_png,game_back_pressed_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "gameEui_json",
+			"type": "json",
+			"url": "gameEui.json"
+		},
+		{
+			"name": "bg_png",
+			"type": "image",
+			"url": "assets/bg.png"
+		},
+		{
+			"name": "item_1_png",
+			"type": "image",
+			"url": "assets/pic/item_1.png"
+		},
+		{
+			"name": "item_2_png",
+			"type": "image",
+			"url": "assets/pic/item_2.png"
+		},
+		{
+			"name": "item_4_png",
+			"type": "image",
+			"url": "assets/pic/item_4.png"
+		},
+		{
+			"name": "item_3_png",
+			"type": "image",
+			"url": "assets/pic/item_3.png"
+		},
+		{
+			"name": "item_5_png",
+			"type": "image",
+			"url": "assets/pic/item_5.png"
+		},
+		{
+			"name": "item_6_png",
+			"type": "image",
+			"url": "assets/pic/item_6.png"
+		},
+		{
+			"name": "item_7_png",
+			"type": "image",
+			"url": "assets/pic/item_7.png"
+		},
+		{
+			"name": "item_8_png",
+			"type": "image",
+			"url": "assets/pic/item_8.png"
+		},
+		{
+			"name": "item_9_png",
+			"type": "image",
+			"url": "assets/pic/item_9.png"
+		},
+		{
+			"name": "item_10_png",
+			"type": "image",
+			"url": "assets/pic/item_10.png"
+		},
+		{
+			"name": "item_11_png",
+			"type": "image",
+			"url": "assets/pic/item_11.png"
+		},
+		{
+			"name": "item_13_png",
+			"type": "image",
+			"url": "assets/pic/item_13.png"
+		},
+		{
+			"name": "item_12_png",
+			"type": "image",
+			"url": "assets/pic/item_12.png"
+		},
+		{
+			"name": "item_14_png",
+			"type": "image",
+			"url": "assets/pic/item_14.png"
+		},
+		{
+			"name": "pressed_start_png",
+			"type": "image",
+			"url": "assets/pressed_start.png"
+		},
+		{
+			"name": "normal_start_png",
+			"type": "image",
+			"url": "assets/normal_start.png"
+		},
+		{
+			"name": "game_back_normal_png",
+			"type": "image",
+			"url": "assets/game_back_normal.png"
+		},
+		{
+			"name": "game_back_pressed_png",
+			"type": "image",
+			"url": "assets/game_back_pressed.png"
+		}
+	]
+}
