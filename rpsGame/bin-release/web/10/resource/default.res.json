@@ -1,0 +1,85 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,arrow_png,paper_hand_png,paper_words_png,paper_png,rock_hand_png,rock_words_png,rock_png,scissors_hand_png,scissors_words_png,scissors_png,select_paper_hand_png,select_rock_hand_png,select_scissors_hand_png,gameEui_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "arrow_png",
+			"type": "image",
+			"url": "assets/arrow.png"
+		},
+		{
+			"name": "paper_hand_png",
+			"type": "image",
+			"url": "assets/paper_hand.png"
+		},
+		{
+			"name": "paper_words_png",
+			"type": "image",
+			"url": "assets/paper_words.png"
+		},
+		{
+			"name": "paper_png",
+			"type": "image",
+			"url": "assets/paper.png"
+		},
+		{
+			"name": "rock_hand_png",
+			"type": "image",
+			"url": "assets/rock_hand.png"
+		},
+		{
+			"name": "rock_words_png",
+			"type": "image",
+			"url": "assets/rock_words.png"
+		},
+		{
+			"name": "rock_png",
+			"type": "image",
+			"url": "assets/rock.png"
+		},
+		{
+			"name": "scissors_hand_png",
+			"type": "image",
+			"url": "assets/scissors_hand.png"
+		},
+		{
+			"name": "scissors_words_png",
+			"type": "image",
+			"url": "assets/scissors_words.png"
+		},
+		{
+			"name": "scissors_png",
+			"type": "image",
+			"url": "assets/scissors.png"
+		},
+		{
+			"name": "select_paper_hand_png",
+			"type": "image",
+			"url": "assets/select_paper_hand.png"
+		},
+		{
+			"name": "select_rock_hand_png",
+			"type": "image",
+			"url": "assets/select_rock_hand.png"
+		},
+		{
+			"name": "select_scissors_hand_png",
+			"type": "image",
+			"url": "assets/select_scissors_hand.png"
+		},
+		{
+			"name": "gameEui_json",
+			"type": "json",
+			"url": "gameEui.json"
+		}
+	]
+}
