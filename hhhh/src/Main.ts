@@ -8,26 +8,12 @@ class Main extends eui.UILayer {
         super();
         this.isDeviceReady = true;
         this.isStageReady = true;
-
-        // document.addEventListener("deviceready", this.deviceready.bind(this));
     }
 
     private deviceready() {
+        // dly
         let self = this;
         this.isDeviceReady = true;
-        // let tm = window['tm'];
-        // if (!!tm) {
-        //     tm.GetMessageInfo({
-        //         keys: ["direct","sessionId","messageId"],
-        //         success: function (data0) {
-        //             self.isSender = data0.direct === "out";
-        //             self.isDeviceReady = true;
-        //             console.log('isDeviceReady--' + new Date());
-        //             self.startGame();
-        //         },
-        //         fail: function () { }
-        //     });
-        // }
     }
 
     protected createChildren(): void {
